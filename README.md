@@ -1,13 +1,10 @@
 # bts-mbds-precourse-team4
-Welcome to the guide repository. In this README you have some tips and all the different sections that your repo's README shoud contain.
-
-Names
-You can provide a table with the names and the contact of all of the participants as follows:
 
 Name	Mail
-Name 1	me@somewhere.com
-Name 2	you@here.org
-It is important to add your contact name as other people could use your code and may require any help.
+Tammy Liang	lctammy1004@gmail.com
+Anastasia Gracheva anastasia.gra4eva@gmail.coM
+
+
 
 Project Description / Abstract
 Few lines explaining what your project consist on is always useful, so people don't have to read the code to understand what you are doing.
