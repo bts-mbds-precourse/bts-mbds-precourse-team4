@@ -10,7 +10,7 @@ Project Description / Abstract
 In this project, we collect data for different wine parameters that corelate with the wine quality. We compare and calculate each parameter to test the r among the dataset.
 
 Dataset
-You should include some lines explaining the dataset you are using, together with the link where you can download the data (if dealing with a public dataset).
+The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.). The goal is to predict the quality given those physicochemical attributes. Only the white wine dataset is used here.
 
 Files and usage
 
