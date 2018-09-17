@@ -33,3 +33,5 @@ The two datasets are related to red and white variants of the Portuguese "Vinho 
 coming soon...
 
 # References
+http://www.vinhoverde.pt/en/
+[Cortez et al., 2009]
