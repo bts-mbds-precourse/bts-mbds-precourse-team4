@@ -1,13 +1,15 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
+import matplotlib
 import numpy as np
 
 pd.set_option('display.max_rows', 5000)
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.width', 1000)
-df=pd.read_csv('/Users/Anastasia/Desktop/BTS/Python/Project/winequality-data.csv')
+df=pd.read_csv('/Users/cenliang/Downloads/winequality-data.csv')
 df=df.drop(['id'],axis=1)
 print(df.head(5))
-
 
 fixedacid=df['fixed.acidity']
 quality=df['quality']
@@ -20,10 +22,9 @@ totalso=df['total.sulfur.dioxide']
 density=df['density']
 ph=df['pH']
 sulphates=df['sulphates']
-alcohol=['alcohol']
+alcohol=df['alcohol']
 
 #1
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('fixedacid')
 plt.axis([0,10,4,11])
@@ -33,7 +34,6 @@ plt.suptitle("fixed acidity")
 plt.show()
 
 #2
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('volatileacid')
 plt.axis([0,10,min(volatileacid),max(volatileacid)])
@@ -43,7 +43,6 @@ plt.show()
 
 
 #3
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('citricacid')
 plt.axis([0,10,min(citricacid),max(citricacid)])
@@ -53,7 +52,6 @@ plt.show()
 
 
 #4
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('resisugar')
 plt.axis([0,10,min(resisugar),max(resisugar)])
@@ -62,7 +60,6 @@ plt.suptitle("residual sugar")
 plt.show()
 
 #5
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('chlorides')
 plt.axis([0,10,min(chlorides),max(chlorides)])
@@ -72,7 +69,6 @@ plt.show()
 
 
 #6
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('freeso')
 plt.axis([0,10,min(freeso),max(freeso)])
@@ -82,7 +78,6 @@ plt.show()
 
 #7
 
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('totalso')
 plt.axis([0,10,min(totalso),max(totalso)])
@@ -92,7 +87,6 @@ plt.show()
 
 #8
 
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('density')
 plt.axis([0,10,min(density),max(density)])
@@ -102,10 +96,27 @@ plt.show()
 
 #9
 
-import matplotlib.pyplot as plt
 plt.xlabel('quality')
 plt.ylabel('ph')
 plt.axis([0,10,min(ph),max(ph)])
 plt.scatter(quality, ph, color='green',marker='.')
 plt.suptitle("pH")
+plt.show()
+
+#10
+
+plt.xlabel('quality')
+plt.ylabel('sulphates')
+plt.axis([0,10,min(sulphates),max(sulphates)])
+plt.scatter(quality, sulphates, color='green',marker='.')
+plt.suptitle("sulphates")
+plt.show()
+
+#10
+
+plt.xlabel('quality')
+plt.ylabel('alcohol')
+plt.axis([0,10,min(alcohol),max(alcohol)])
+plt.scatter(quality, alcohol, color='green',marker='.')
+plt.suptitle("alcohol")
 plt.show()
