@@ -123,3 +123,17 @@ plt.show()
 corr = df.corr()
 sns.heatmap(corr, annot=True, annot_kws={"size": 6}, cmap="Reds")
 plt.show()
+
+
+
+def scatter(dataset):
+    
+    plt.xlabel('quality')
+    plt.ylabel('{}'.format(dataset))
+    plt.axis([0,10,min(dataset),max(dataset)])
+    plt.scatter(quality, dataset, color='red',marker='.')
+    plt.suptitle('{}'.format(dataset))
+    #plt.yticks(quality)
+    plt.show()
+    
+ scatter(ph)
