@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
-import matplotlib
+import seaborn as sns
 import numpy as np
 
 pd.set_option('display.max_rows', 5000)
@@ -119,4 +118,8 @@ plt.ylabel('alcohol')
 plt.axis([0,10,min(alcohol),max(alcohol)])
 plt.scatter(quality, alcohol, color='green',marker='.')
 plt.suptitle("alcohol")
+plt.show()
+
+corr = df.corr()
+sns.heatmap(corr, annot=True, annot_kws={"size": 6}, cmap="Reds")
 plt.show()
