@@ -24,12 +24,7 @@ sulphates=df['sulphates']
 alcohol=df['alcohol']
 
 
-
-
-corr = df.corr()
-sns.heatmap(corr, annot=True, annot_kws={"size": 6}, cmap="Reds")
-plt.show()
-
+#scatter functions
 
 def scatter(column):
     plt.xlabel('quality')
@@ -39,5 +34,43 @@ def scatter(column):
     plt.suptitle(column)
     plt.show()
 
-
 scatter('pH')
+
+
+
+def heatmap(set,title=None):
+    corr = set.corr()
+    sns.heatmap(corr, annot=True, annot_kws={"size": 6}, cmap="Reds")
+    plt.title(title)
+    plt.show()
+
+    
+    
+#quality counts    
+print(max(quality),min(quality))
+print(len(df[df['quality']==9]))
+print(len(df[df['quality']==8]))
+print(len(df[df['quality']==7]))
+print(len(df[df['quality']==6]))
+print(len(df[df['quality']==5]))
+print(len(df[df['quality']==4]))
+print(len(df[df['quality']==3]))
+print(len(df['quality']))
+
+
+
+#heatmaps
+heatmap(df,title="allwine")
+
+goodwine=df[df["quality"]>6]
+heatmap(goodwine,title="goodwine")
+
+averagewine=df[(df["quality"]<=6 ) & (df["quality"]>5)]
+heatmap(averagewine,title="averagewine")
+
+lowqualitywine=df[df["quality"]<5]
+heatmap(lowqualitywine,title="lowqualitywine")
+
+
+
+
