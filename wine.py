@@ -34,32 +34,17 @@ def scatter(column):
     plt.suptitle(column)
     plt.show()
 
-scatter('pH')
+pd.DataFrame(list(df)).applymap(scatter)
 
-
+#heatmaps
 
 def heatmap(set,title=None):
     corr = set.corr()
     sns.heatmap(corr, annot=True, annot_kws={"size": 6}, cmap="Reds")
     plt.title(title)
-    plt.show()
-
-    
-    
-#quality counts    
-print(max(quality),min(quality))
-print(len(df[df['quality']==9]))
-print(len(df[df['quality']==8]))
-print(len(df[df['quality']==7]))
-print(len(df[df['quality']==6]))
-print(len(df[df['quality']==5]))
-print(len(df[df['quality']==4]))
-print(len(df[df['quality']==3]))
-print(len(df['quality']))
+    plt.show() 
 
 
-
-#heatmaps
 heatmap(df,title="allwine")
 
 goodwine=df[df["quality"]>6]
@@ -75,12 +60,15 @@ heatmap(lowqualitywine,title="lowqualitywine")
 
 
 #histgram
-def hist(feature):
-    hist=df[feature].hist(bins=int(max(df[feature])-min(df[feature])+1),grid=False, edgecolor='white', alpha=0.8)
+
+def hist(feature,bin=None):
+    hist=df[feature].hist(bins=bin,grid=False, edgecolor='white', alpha=0.8)
     plt.xlabel(feature)
     plt.show()
-
+    
 hist('quality')
+
+pd.DataFrame(list(df)).applymap(hist)
 
 
 #for data in df:
