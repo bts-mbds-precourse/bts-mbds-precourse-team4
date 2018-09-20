@@ -24,17 +24,21 @@ sulphates=df['sulphates']
 alcohol=df['alcohol']
 
 
+
 #scatter functions
+
+scatterlist=[i for i in list(df) if i!='quality']
+print(list)
 
 def scatter(column):
     plt.xlabel('quality')
     plt.ylabel(column)
     plt.axis([0, 10, min(df[column]), df[column].max()])
-    plt.scatter(quality, df[column], color='red')
+    plt.scatter(quality, df[column], alpha=0.4,marker='o',facecolors='none', edgecolors='r')
     plt.suptitle(column)
     plt.show()
 
-pd.DataFrame(list(df)).applymap(scatter)
+pd.DataFrame(scatterlist).applymap(scatter)
 
 #heatmaps
 
