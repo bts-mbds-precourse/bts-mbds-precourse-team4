@@ -43,22 +43,23 @@ pd.DataFrame(scatterlist).applymap(scatter)
 #heatmaps
 
 def heatmap(set,title=None):
+    fig, ax = plt.subplots(figsize=(10, 10))
     corr = set.corr()
-    sns.heatmap(corr, annot=True, annot_kws={"size": 6}, cmap="Reds")
+    sns.heatmap(corr, annot=True, annot_kws={"size": 10}, cmap="Reds",ax=ax)
     plt.title(title)
-    plt.show() 
+    plt.show()
 
 
-heatmap(df,title="allwine")
+heatmap(df,title="All Wine")
 
 goodwine=df[df["quality"]>6]
-heatmap(goodwine,title="goodwine")
+heatmap(goodwine,title="Good Wine")
 
 averagewine=df[(df["quality"]<=6 ) & (df["quality"]>5)]
-heatmap(averagewine,title="averagewine")
+heatmap(averagewine,title="Average Wine")
 
 lowqualitywine=df[df["quality"]<5]
-heatmap(lowqualitywine,title="lowqualitywine")
+heatmap(lowqualitywine,title="Lowquality Wine")
 
 
 
