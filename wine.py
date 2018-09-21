@@ -78,6 +78,23 @@ pd.DataFrame(list(df)).applymap(hist)
 
 #for data in df:
  #   print(hist(data))
+    
+#boxplots for all data
+
+box1=df[['citric.acid', 'volatile.acidity', 'chlorides','density','sulphates']]
+box2=df[['fixed.acidity','residual.sugar','pH','alcohol']]
+box3=df[['total.sulfur.dioxide','free.sulfur.dioxide']]
+
+sns.set(style="whitegrid")
+box1 = sns.boxplot(data=box1,palette="Set1")
+plt.show()
+
+box2 = sns.boxplot(data=box2,palette="Set2")
+plt.show()
+
+box3 = sns.boxplot(data=box3,palette="Set3")
+plt.show()
+
 
 
 
