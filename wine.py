@@ -67,12 +67,15 @@ heatmap(lowqualitywine,title="Lowquality Wine")
 
 #histgram
 
-def hist(feature,bin=None):
-    hist=df[feature].hist(bins=bin,grid=False, edgecolor='white', alpha=0.8)
-    plt.xlabel(feature)
+def hist(feature, bin=None):
+    hist = df[feature].hist(bins=bin, grid=False, edgecolor='white', alpha=0.8, facecolor='#fc8869', figsize=(30, 40))
+    plt.xlabel(feature, fontsize=20)
+    plt.ylabel('number of samples', fontsize=20)
     plt.show()
-    
-hist('quality')
+
+quality= df['quality']
+
+
 
 pd.DataFrame(list(df)).applymap(hist)
 
