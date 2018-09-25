@@ -73,8 +73,6 @@ def hist(feature, bin=None):
     plt.ylabel('number of samples', fontsize=20)
     plt.show()
 
-quality= df['quality']
-
 
 
 pd.DataFrame(list(df)).applymap(hist)
