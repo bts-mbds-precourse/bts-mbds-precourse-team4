@@ -56,7 +56,7 @@ heatmap(df,title="All Wine")
 goodwine=df[df["quality"]>6]
 heatmap(goodwine,title="Good Wine")
 
-averagewine=df[(df["quality"]<=6 ) & (df["quality"]>5)]
+averagewine=df[(df["quality"]<=6 ) & (df["quality"]>=5)]
 heatmap(averagewine,title="Average Wine")
 
 lowqualitywine=df[df["quality"]<5]
