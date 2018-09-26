@@ -68,3 +68,15 @@ heatmap(averagewine,title="Average Wine")
 
 lowqualitywine=df[df["quality"]<5]
 heatmap(lowqualitywine,title="Lowquality Wine")
+
+
+
+#Compare different quality of wine
+
+bins = pd.IntervalIndex.from_breaks([2.5,4.5,6.5,9.5])
+wine=df.groupby(pd.cut(np.array(df['quality']), bins=bins)).mean()
+wine.index=["bad", "average", "good"]
+wine['volatile.acidity']*=10 #change the range only save the trend
+wine['total.sulfur.dioxide']/=20 #change the range only save the trend
+wine=wine.T
+wine=wine.plot.bar(figsize=(20,20),color=['tan','red','darkred'])
