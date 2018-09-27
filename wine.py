@@ -69,7 +69,35 @@ heatmap(averagewine,title="Average Wine")
 lowqualitywine=df[df["quality"]<5]
 heatmap(lowqualitywine,title="Lowquality Wine")
 
+#Scatter plots with joint regression for variables
 
+from scipy import stats
+
+
+df = df[(np.abs(stats.zscore(df['density'])) < 1.5
+         )]
+
+newdf = sns.JointGrid(x="density", y="total.sulfur.dioxide", data=df, size=6)
+newdf = newdf.plot_joint(sns.regplot, scatter_kws={"s": 5})
+newdf = newdf.plot_marginals(sns.distplot)
+
+
+
+df = df[(np.abs(stats.zscore(df['chlorides'])) < 2
+         )]
+
+newdf = sns.JointGrid(x="chlorides", y="alcohol", data=df, size=6)
+newdf = newdf.plot_joint(sns.regplot, scatter_kws={"s": 5})
+newdf = newdf.plot_marginals(sns.distplot)
+
+
+
+df = df[(np.abs(stats.zscore(df['residual.sugar'])) < 3
+         
+         )]
+newdf = sns.JointGrid(x="density", y="residual.sugar", data=df, size=6)
+newdf = newdf.plot_joint(sns.regplot, scatter_kws={"s": 5})
+newdf = newdf.plot_marginals(sns.distplot)
 
 #Compare different quality of wine
 
