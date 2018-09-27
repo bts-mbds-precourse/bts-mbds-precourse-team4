@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 red=pd.read_csv('/Users/cenliang/Downloads/winequality-red.csv',sep=";")
 white=pd.read_csv('/Users/cenliang/Downloads/winequality-white.csv',sep=";")
-red.head()
 
+#histogram for red and white
 sns.set()
 red.hist(figsize=(10,10), color='red')
 white.hist(figsize=(10,10), color='blue')
